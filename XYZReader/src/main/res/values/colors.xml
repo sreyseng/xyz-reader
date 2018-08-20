@@ -25,7 +25,7 @@
 
 
   <color name="primaryColor">#9c27b0</color>
-  <!--<color name="primaryLightColor">#d05ce3</color>-->
+  <color name="primaryLightColor">#d05ce3</color>
   <color name="primaryDarkColor">#6a0080</color>
   <color name="secondaryColor">#ff4081</color>
   <!--<color name="secondaryLightColor">#ff79b0</color>-->
