@@ -16,7 +16,6 @@ import android.support.v13.app.FragmentStatePagerAdapter;
 import android.support.v4.app.ShareCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.graphics.Palette;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.util.TypedValue;
@@ -42,8 +41,6 @@ public class ArticleDetailActivity extends AppCompatActivity
     private CollapsingToolbarLayout mCollapsingToolbar;
 
     private long mSelectedItemId;
-    private int mSelectedItemUpButtonFloor = Integer.MAX_VALUE;
-    private int mTopInset;
 
     private ViewPager mPager;
     private MyPagerAdapter mPagerAdapter;
@@ -79,12 +76,9 @@ public class ArticleDetailActivity extends AppCompatActivity
 
             @Override
             public void onPageSelected(int position) {
-                Log.d("SENG", "onPageSelected: position = " + position);
                 if (mCursor != null) {
-                    Log.d("SENG", "onPageSelected: current=" + mCursor.getPosition());
                     mCursor.moveToPosition(position);
                     initCollapsingToolbar(mCursor);
-                    Log.d("SENG", "onPageSelected: move cursor to pos=" + mCursor.getPosition());
                 }
                 mSelectedItemId = mCursor.getLong(ArticleLoader.Query._ID);
             }
@@ -98,15 +92,13 @@ public class ArticleDetailActivity extends AppCompatActivity
             }
         }
 
-        Log.d("SENG", "onCreate: mSelectedItem = " + mSelectedItemId);
-
         mToolbar = findViewById(R.id.toolbar_m);
         mPhotoView = findViewById(R.id.toolbar_photo);
+
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         mCollapsingToolbar = findViewById(R.id.toolbar_layout);
-
 
         FloatingActionButton fab = findViewById(R.id.share_fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -127,8 +119,6 @@ public class ArticleDetailActivity extends AppCompatActivity
         String title = cursor.getString(Query.TITLE);
         String photoUrl = cursor.getString(Query.PHOTO_URL);
         mCollapsingToolbar.setTitle(title);
-
-
 
         ImageLoaderHelper.getInstance(this).getImageLoader()
             .get(photoUrl, new ImageLoader.ImageListener() {
@@ -165,9 +155,7 @@ public class ArticleDetailActivity extends AppCompatActivity
                 if (mCursor.getLong(ArticleLoader.Query._ID) == mStartId) {
                     final int position = mCursor.getPosition();
                     mPager.setCurrentItem(position, false);
-
                     initCollapsingToolbar(mCursor);
-
                     break;
                 }
                 mCursor.moveToNext();
@@ -178,7 +166,6 @@ public class ArticleDetailActivity extends AppCompatActivity
 
     @Override
     public void onLoaderReset(Loader<Cursor> cursorLoader) {
-        Log.d("SENG", "onLoaderReset: setting mcursor to null....");
         mCursor = null;
         mPagerAdapter.notifyDataSetChanged();
     }
