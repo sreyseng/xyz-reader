@@ -17,7 +17,6 @@ import android.support.v4.app.ShareCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
 
@@ -40,13 +39,9 @@ public class ArticleDetailActivity extends AppCompatActivity
     private Toolbar mToolbar;
     private CollapsingToolbarLayout mCollapsingToolbar;
 
-    private long mSelectedItemId;
-
     private ViewPager mPager;
     private MyPagerAdapter mPagerAdapter;
     private ImageView mPhotoView;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,7 +75,6 @@ public class ArticleDetailActivity extends AppCompatActivity
                     mCursor.moveToPosition(position);
                     initCollapsingToolbar(mCursor);
                 }
-                mSelectedItemId = mCursor.getLong(ArticleLoader.Query._ID);
             }
         });
 
@@ -88,7 +82,6 @@ public class ArticleDetailActivity extends AppCompatActivity
         if (savedInstanceState == null) {
             if (getIntent() != null && getIntent().getData() != null) {
                 mStartId = ItemsContract.Items.getItemId(getIntent().getData());
-                mSelectedItemId = mStartId;
             }
         }
 
