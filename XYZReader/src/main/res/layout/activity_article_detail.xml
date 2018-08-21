@@ -17,12 +17,15 @@
       android:layout_width="match_parent"
       android:layout_height="match_parent"
       android:fitsSystemWindows="true"
+      android:background="@color/primaryColor"
       app:contentScrim="@color/primaryColor"
       app:layout_scrollFlags="scroll|exitUntilCollapsed"
       app:toolbarId="@+id/toolbar_m">
 
       <ImageView
         android:id="@+id/toolbar_photo"
+        android:scaleType="centerCrop"
+        android:adjustViewBounds="true"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:src="@drawable/ic_share"
