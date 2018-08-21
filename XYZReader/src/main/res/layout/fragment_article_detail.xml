@@ -12,11 +12,13 @@
 
     <TextView
       android:id="@+id/article_byline"
+      style="@style/Theme.Bacon.ArticleDetailByline"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"/>
 
     <TextView
       android:id="@+id/article_body"
+      style="@style/Theme.Bacon.ArticleDetailBody"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"/>
 
