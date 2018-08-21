@@ -41,6 +41,7 @@
     <item name="android:textColor">@color/secondaryTextColor</item>
     <item name="android:layout_margin">@dimen/detail_body_top_margin</item>
     <item name="android:textSize">@dimen/detail_body_text_size</item>
+    <item name="android:lineSpacingMultiplier">@fraction/detail_body_line_spacing_multiplier</item>
   </style>
 
 </resources>
