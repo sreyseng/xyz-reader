@@ -32,18 +32,13 @@
 
   <style name="Theme.Bacon.ArticleDetailByline">
     <item name="android:textColor">@color/secondaryTextColor</item>
-    <item name="android:layout_margin">@dimen/byline_margin</item>
+    <item name="android:layout_margin">@dimen/detail_body_top_margin</item>
   </style>
 
   <style name="Theme.Bacon.ArticleDetailBody">
     <item name="android:textColor">@color/secondaryTextColor</item>
-    <item name="android:layout_margin">@dimen/byline_margin</item>
-    <item name="android:textSize">@dimen/body</item>
-    <item name="android:textStyle">normal</item>
+    <item name="android:layout_margin">@dimen/detail_body_top_margin</item>
+    <item name="android:textSize">@dimen/detail_body_text_size</item>
   </style>
 
-
-  <!--TODO: move-->
-  <dimen name="byline_margin">8dp</dimen>
-  <dimen name="body">20sp</dimen>
 </resources>
