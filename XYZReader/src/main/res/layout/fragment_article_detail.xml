@@ -1,4 +1,4 @@
-<ScrollView android:id="@+id/fragment_scrollview"
+<android.support.v4.widget.NestedScrollView android:id="@+id/fragment_scrollview"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
   xmlns:android="http://schemas.android.com/apk/res/android">
@@ -49,5 +49,5 @@
 
   </LinearLayout>
 
-</ScrollView>
+</android.support.v4.widget.NestedScrollView>
 

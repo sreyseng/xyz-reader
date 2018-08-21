@@ -1,29 +1,49 @@
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:app="http://schemas.android.com/apk/res-auto"
-  android:fitsSystemWindows="true"
   android:layout_width="match_parent"
-  android:layout_height="match_parent">
+  android:layout_height="match_parent"
+  android:fitsSystemWindows="true">
 
-    <LinearLayout
-      android:orientation="vertical"
+
+
+  <android.support.design.widget.AppBarLayout
+    android:id="@+id/app_bar"
+    android:layout_width="match_parent"
+    android:layout_height="256dp"
+    android:fitsSystemWindows="true">
+
+    <android.support.design.widget.CollapsingToolbarLayout
+      android:id="@+id/toolbar_layout"
       android:layout_width="match_parent"
-      android:layout_height="match_parent">
+      android:layout_height="match_parent"
+      android:fitsSystemWindows="true"
+      app:contentScrim="@color/primaryColor"
+      app:layout_scrollFlags="scroll|exitUntilCollapsed"
+      app:toolbarId="@+id/toolbar_m">
 
-        <android.support.v7.widget.Toolbar
-          android:id="@+id/toolbar"
-          android:layout_width="match_parent"
-          android:layout_height="?actionBarSize"
-          android:background="@color/primaryColor" />
+      <ImageView
+        android:id="@+id/toolbar_photo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/ic_share"
+        app:layout_collapseMode="parallax"
+        />
 
 
-            <android.support.v4.view.ViewPager
-              android:id="@+id/pager"
-              app:layout_behavior="@string/appbar_scrolling_view_behavior"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent" />
+      <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_m"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_collapseMode="pin"/>
 
-    </LinearLayout>
+    </android.support.design.widget.CollapsingToolbarLayout>
+  </android.support.design.widget.AppBarLayout>
 
+  <android.support.v4.view.ViewPager
+    android:id="@+id/pager"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
 
 
 </android.support.design.widget.CoordinatorLayout>
