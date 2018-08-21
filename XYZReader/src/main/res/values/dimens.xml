@@ -7,5 +7,7 @@
     <dimen name="fab_press_translation_z">6dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="expanded_title_margin">56dp</dimen>
+    <dimen name="text_padding">16dp</dimen>
+    <dimen name="toolbar_elevation">4dp</dimen>
 
 </resources>

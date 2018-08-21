@@ -10,6 +10,7 @@
     android:id="@+id/app_bar"
     android:layout_width="match_parent"
     android:layout_height="256dp"
+    android:background="@color/primaryColor"
     android:fitsSystemWindows="true">
 
     <android.support.design.widget.CollapsingToolbarLayout
@@ -36,6 +37,7 @@
 
       <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar_m"
+        android:elevation="@dimen/toolbar_elevation"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         app:layout_collapseMode="pin"/>
