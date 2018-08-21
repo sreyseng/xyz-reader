@@ -7,6 +7,7 @@
 
   <android.support.design.widget.AppBarLayout
     android:id="@+id/app_bar"
+    android:elevation="@dimen/toolbar_elevation"
     android:layout_width="match_parent"
     android:layout_height="@dimen/app_bar_height"
     android:background="@color/primaryColor"
@@ -56,6 +57,7 @@
     android:layout_height="wrap_content"
     android:layout_margin="@dimen/fab_margin"
     app:elevation="@dimen/fab_elevation"
+    android:translationZ="@dimen/translate_elevation"
     android:src="@drawable/ic_share"
     app:backgroundTint="@color/secondaryColor"
     android:stateListAnimator="@anim/fab_state_list_anim"
